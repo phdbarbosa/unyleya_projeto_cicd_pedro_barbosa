@@ -70,6 +70,11 @@ steps:
 - task: PublishPipelineArtifact@1
   inputs:
        artifactName: # 'drop'
-
  
 
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Docker hub'
+    repository: 'unyleyapedro'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
